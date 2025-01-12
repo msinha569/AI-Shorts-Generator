@@ -42,14 +42,20 @@ const CreateNew = () => {
       rawData.forEach((scene) => {
         scriptData = scriptData + scene.ContentText
       } )
+      console.log("hereeee");
+      
       console.log(scriptData);
       try {
         const res = await axios.post('/api/generate-audio', {scriptText:scriptData})
       console.log(res.data);
+      console.log("try block");
+      return res
         
       } catch (error) {
         console.log(error)
       }
+      console.log("end of getVoiceover");
+      
     }
   return (
     <div className='md:px-20'>
